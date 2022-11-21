@@ -1,0 +1,9 @@
+<% layout('layouts/boilerplate') %> 
+<body>
+            <h1>All Assignments:</h1>
+            <% for(let assignment of assignments){ %>
+                <div class="list-group-item list-group-item-action list-group-item-secondary ">
+                    <a href="/assignments/<%=assignment._id %>" class="list-group-item list-group-item-action"><%=assignment.title%></a>
+                </div>
+                <% } %>
+</body>

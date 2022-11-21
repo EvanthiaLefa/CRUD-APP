@@ -1,0 +1,22 @@
+<% layout('layouts/boilerplate') %>
+
+    <body>
+        <div class="row">
+            <h1 class="text-center">Enroll Student</h1>
+            <div class="col-6 offset-3">
+                <form action="/students" method="POST">
+                    <div class="mb-3">
+                        <label for="studentFirstName" class="form-label">Student FirstName:</label>
+                        <input type="text" name="firstName" id="studentFirstName" placeholder="FirstName" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="studentLastName" class="form-label">Student LastName:</label>
+                        <input type="text" name="lastName" id="studentLastName" placeholder=" LastName"class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-success">Submit!!</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>

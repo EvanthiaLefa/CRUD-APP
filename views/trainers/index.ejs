@@ -1,0 +1,9 @@
+<% layout('layouts/boilerplate') %> 
+<body>
+    <h1>All Trainers:</h1>
+    <% for(let trainer of trainers){ %>
+        <div class="list-group-item list-group-item-action list-group-item-secondary ">
+            <a href="/trainers/<%=trainer._id %>" class="list-group-item list-group-item-action"><%=trainer.firstName%> <%= trainer.lastName %> </a>
+        </div>
+        <% } %>
+</body>

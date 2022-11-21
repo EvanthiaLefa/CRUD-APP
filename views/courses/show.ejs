@@ -1,0 +1,40 @@
+<% layout('layouts/boilerplate') %> 
+<body>
+<div class="row">
+    <div class="col-6 offset-3">
+    <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title"><%=course.name %></h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><b>Trainer:</b> <%= course.trainer %></li>
+          <li class="list-group-item"><b>Students:</b> <%= course.students %></li>
+          <li class="list-group-item"><b>Assignments:</b> <%= course.assignments %></li>
+        </ul>
+        <div class="card-body">
+          <a href="/courses/<%= course._id%>/edit" class="btn btn-info">Edit</a>
+          <form class="d-inline" action="/courses/<%=course._id%>?_method=DELETE" method="POST">
+            <button class="btn btn-danger">Delete</button>
+        </form>
+        </div>
+      </div>
+      <a href="/courses" class="card-link">All Courses</a>
+    </div>
+    </div>
+      
+      
+     
+
+    <!-- <h1> <%= course.name %></h1>
+    <ul>
+        <li> <b>Trainer:</b> <%= course.trainer %> </li>
+        <li> <b>Students:</b> <%= course.students %></li>
+        <li> <b>Assignments:</b> <%= course.assignments %></li>
+    </ul>
+    <a href="/courses">All Courses</a>
+    <a href="/courses/<%= course._id%>/edit">Edit</a>
+    
+    <form action="/courses/<%=course._id%>?_method=DELETE" method="POST">
+        <button class="btn btn-danger">Delete</button>
+    </form> -->
+</body>

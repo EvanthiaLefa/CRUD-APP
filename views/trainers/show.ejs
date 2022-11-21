@@ -1,0 +1,23 @@
+<% layout('layouts/boilerplate') %> 
+<body>
+    <div class="row">
+        <div class="col-6 offset-3">
+        <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title"> Trainer: <%= trainer._id %></h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"> <b>FirstName:</b> <%= trainer.firstName %> </li>
+              <li class="list-group-item"><b>LastName:</b> <%= trainer.lastName %></li>
+            </ul>
+            <div class="card-body">
+              <a  href="/trainers/<%= trainer._id%>/edit" class="btn btn-info">Edit</a>
+              <form class="d-inline" action="/trainers/<%=trainer._id%>?_method=DELETE" method="POST">
+                <button class="btn btn-danger">Delete</button>
+            </form>
+            </div>
+          </div>
+          <a  href="/trainers" class="card-link">All Trainers</a>
+        </div>
+        </div>
+</body>

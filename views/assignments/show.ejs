@@ -1,0 +1,26 @@
+<% layout('layouts/boilerplate') %> 
+<body>
+
+    <div class="row">
+        <div class="col-6 offset-3">
+        <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title"> <%= assignment.title  %></h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><b>Assignment :</b> <%= assignment.title  %></li>
+              <li class="list-group-item"><b>Students:</b> <%= assignment. student %></li>
+              <li class="list-group-item"><b>Course:</b> <%= assignment.nameOfCourse  %></li>
+            </ul>
+            <div class="card-body">
+              <a href="/assignments/<%= assignment._id%>/edit" class="btn btn-info">Edit</a>
+              <form class="d-inline" action="/assignments/<%=assignment._id%>?_method=DELETE" method="POST">
+                <button class="btn btn-danger">Delete</button>
+            </form>
+            </div>
+          </div>
+          <a href="/assignments" class="card-link">All Assignments</a>
+        </div>
+        </div>
+
+</body>

@@ -1,0 +1,23 @@
+<% layout('layouts/boilerplate') %>
+
+    <body>
+        <div class="row">
+            <div class="col-6 offset-3">
+                <h1 class="text-center">Edit Trainer</h1>
+                <div class="mb-3">
+                    <form action="/trainers/<%=trainer._id%>?_method=PUT" method="POST">
+                        <label for="trainerFirstName" class="form-label">Trainer FirstName:</label>
+                        <input type="text" name="firstName" id="trainerFirstName" placeholder="FirstName" class="form-control" value="<%=trainer.firstName%> ">
+                </div>
+                <div class="mb-3">
+                    <label for="trainerLastName" class="form-label">Trainer LastName:</label>
+                    <input type="text" name="lastName" id="trainerLastName" placeholder=" LastName" class="form-control" value="<%=trainer.lastName %>">
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-info">Update</button>
+                </div>
+                </form>
+                <a href="/trainers/<%=trainer._id%>">Back</a>
+            </div>
+        </div>
+    </body>

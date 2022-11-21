@@ -1,0 +1,44 @@
+<% layout('layouts/boilerplate') %> 
+<body>
+    <div class="row">
+            <h1 class="text-center">Add New Assignmemt</h1>
+            <div class="col-6 offset-3">
+            <form action="/assignments" method="POST">
+                <div class="mb-3">
+                    <label for="assignment" class="form-label">Create Assignment:</label>
+                    <input type="text" name="title" id="assignment" placeholder="assignment title" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <fieldset>
+                        <label class="form-label">Choose Students to Enroll for the Assignment:</label>
+                        <div>
+                            <% for(let student of students){ %>
+                                <input class="form-check-input" type="checkbox" id="student" name="student" value="<%= student.lastName %> <%= student.firstName  %>">
+                                <label class="form-check-label" for="student">
+                                    <%= student.lastName %> <%= student.firstName %>
+                                </label>
+                                <% } %>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="mb-3">
+                    <fieldset>
+                        <label class="form-label">Choose the Course of the Assignmemt:</label>
+                        <div>
+                            <% for(let course of courses){ %>
+                                <input class="form-check-input" type="checkbox" id="course" name="nameOfCourse" value="<%=course.name%>">
+                                <label class="form-check-label" for="course">
+                                    <%=course.name%>
+                                </label>
+                                <% } %>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-success">Submit!!</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
